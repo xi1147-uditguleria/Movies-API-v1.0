@@ -1,0 +1,13 @@
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/domain/entity/Movie.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/repository/MovieRepository.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/common/exception/MovieNotFoundException.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/domain/enums/MovieCategory.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/common/exception/handler/CustomExceptionHandler.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/MovieApplication.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/domain/dto/MovieDto.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/common/exception/ExceptionDetails.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/common/exception/RedundantMovieException.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/config/SwaggerConfig.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/service/impl/MovieServiceImpl.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/service/MovieService.java
+/home/udit/Udit/Assignment/movie_api_v1.0/src/main/java/com/movie/controller/MovieController.java

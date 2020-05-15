@@ -1,0 +1,14 @@
+com/movie/domain/entity/Movie.class
+com/movie/repository/MovieRepository.class
+com/movie/config/SwaggerConfig.class
+com/movie/MovieApplication.class
+com/movie/controller/MovieController.class
+com/movie/domain/entity/Movie$MovieBuilder.class
+com/movie/common/exception/MovieNotFoundException.class
+com/movie/common/exception/ExceptionDetails.class
+com/movie/service/impl/MovieServiceImpl.class
+com/movie/service/MovieService.class
+com/movie/common/exception/handler/CustomExceptionHandler.class
+com/movie/common/exception/RedundantMovieException.class
+com/movie/domain/enums/MovieCategory.class
+com/movie/domain/dto/MovieDto.class
