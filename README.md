@@ -24,6 +24,13 @@ mvn spring-boot:run
 
 ## Building single executable docker image
 
+First build an application jar using the command:
+
+```shell
+./mvn clean install
+```
+Build the docker image using the command :
+
 ```shell
 docker build -t movies-api/v1.0 . 
 ```
@@ -45,10 +52,10 @@ alternate :-
 
 |  URL                                                                         |  Method |
 |------------------------------------------------------------------------------|---------|
-|`http://localhost:8090/api/v1.0/movies`  						               |   GET   |
-|`http://localhost:8090/api/v1.0/movies/{id}`                                  |   GET   |
-|`http://localhost:8090/api/v1.0/movies`          	          				   |   POST  |
-|`http://localhost:8090/api/v1.0/movies`                                       |   PUT   |
-|`http://localhost:8090/api/v1.0/movies/{id}`                  				   |  DELETE |
+|`http://localhost:8080/api/v1.0/movies`  						               |   GET   |
+|`http://localhost:8080/api/v1.0/movies/{id}`                                  |   GET   |
+|`http://localhost:8080/api/v1.0/movies`          	          				   |   POST  |
+|`http://localhost:8080/api/v1.0/movies`                                       |   PUT   |
+|`http://localhost:8080/api/v1.0/movies/{id}`                  				   |  DELETE |
 
 
