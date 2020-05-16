@@ -35,8 +35,7 @@ public class Movie {
   @Version int version;
 
   /**
-   * Auto-incrementing version (integer) column. Incremented automatically on each UPDATE. Can be
-   * used for optimistic locking.
+   * Auto-incrementing version (integer) column. Incremented automatically on each UPDATE.
    */
   private String title;
 
@@ -54,9 +53,5 @@ public class Movie {
     Movie movie = movieBuilder.build();
 
     return movie;
-  }
-
-  public static MovieDto toDto(Movie movie) {
-    return new MovieDto(movie);
   }
 }

@@ -9,6 +9,7 @@ import com.movie.service.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,10 +23,11 @@ public class MovieServiceImpl implements MovieService {
 
   @Override
   public List<MovieDto> getAllMovies() {
-    return this.movieRepository.findAll().stream().map(Movie::toDto).collect(Collectors.toList());
+    return this.movieRepository.findAll().stream().map(MovieDto::toDto).collect(Collectors.toList());
   }
 
   @Override
+  @Transactional
   public MovieDto createMovie(MovieDto movieDto) {
     Movie movie = Movie.from(movieDto);
     if (movieRepository.findByTitle(movie.getTitle()).isPresent()) {
@@ -33,7 +35,8 @@ public class MovieServiceImpl implements MovieService {
           String.format("Movie with title %s already exists ", movie.getTitle()));
     }
     movie = movieRepository.save(movie);
-    return Movie.toDto(movie);
+    return new MovieDto(movie);
+
   }
 
   @Override
@@ -43,10 +46,11 @@ public class MovieServiceImpl implements MovieService {
       log.error("No movie entry found by id - {}", id);
       throw new MovieNotFoundException(String.format("No movie entry found by id - %d", id));
     }
-    return Movie.toDto(movie.get());
+      return new MovieDto(movie.get());
   }
 
   @Override
+  @Transactional
   public MovieDto updateMovie(MovieDto movieDto) {
     Optional<Movie> optional = movieRepository.findById(movieDto.getId());
     if (!optional.isPresent()) {
@@ -59,10 +63,11 @@ public class MovieServiceImpl implements MovieService {
     initialMovie.setTitle(movieDto.getTitle());
     initialMovie.setStarRating(movieDto.getStarRating());
     initialMovie.setCategory(movieDto.getCategory());
-    return Movie.toDto(movieRepository.save(initialMovie));
+    return new MovieDto(movieRepository.save(initialMovie));
   }
 
   @Override
+  @Transactional
   public void deleteMovieById(Long id) {
     Optional<Movie> optional = movieRepository.findById(id);
     if (!optional.isPresent()) {

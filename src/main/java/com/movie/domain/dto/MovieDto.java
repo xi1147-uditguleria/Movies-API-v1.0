@@ -2,7 +2,12 @@ package com.movie.domain.dto;
 
 import com.movie.domain.entity.Movie;
 import com.movie.domain.enums.MovieCategory;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -33,4 +38,9 @@ public class MovieDto {
     this.category = movie.getCategory();
     this.starRating = movie.getStarRating();
   }
+
+  public static MovieDto toDto(Movie movie) {
+    return new MovieDto(movie);
+  }
+
 }
