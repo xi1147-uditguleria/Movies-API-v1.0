@@ -65,7 +65,7 @@ class MovieControllerTest {
 
   @Test
   public void deleteMovieTest() throws Exception {
-    doNothing().when(movieService).deleteMovieById(Long.valueOf(2));
+    doNothing().when(movieService).deleteMovieById((long)2);
     RequestBuilder requestBuilder = MockMvcRequestBuilders.delete("/api/v1.0/movies/2");
     mockMvc.perform(requestBuilder).andDo(print()).andExpect(status().isOk());
   }
