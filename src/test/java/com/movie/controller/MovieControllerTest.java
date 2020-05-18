@@ -73,7 +73,7 @@ class MovieControllerTest {
   @Test
   void createMovieTest() throws JsonProcessingException, Exception {
     MovieDto request = getMovieRequestDto("Saw", MovieCategory.SUSPENSE, 2.0);
-    MovieDto response = new MovieDto(2l, "Saw", MovieCategory.SUSPENSE, 2.0);
+    MovieDto response = new MovieDto((long)2.0, "Saw", MovieCategory.SUSPENSE, 2.0);
     when(movieService.createMovie(request)).thenReturn(response);
 
     ObjectMapper mapper = new ObjectMapper();
